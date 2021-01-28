@@ -10,13 +10,7 @@ const Header = () => {
 
   return (
     <div className="Header">
-      <h1
-        style={{
-          color: isDarkModeTheme ? "" : "blue",
-        }}
-      >
-        ReactHooks
-      </h1>
+      <h1>ReactHooks</h1>
       <button type="button" onClick={handleClick}>
         {isDarkModeTheme ? "Light Mode" : "Dark Mode"}
       </button>
