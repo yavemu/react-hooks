@@ -1,4 +1,5 @@
 import "./App.css";
+import Characters from "./components/Characters";
 import Header from "./components/Header";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="App">
       <h1>Hola Mundo desde React</h1>
       <Header />
+      <Characters />
     </div>
   );
 }
