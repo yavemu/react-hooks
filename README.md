@@ -30,3 +30,39 @@ useEffect(() => {
       .then((data) => setCharactersData(data.results));
   }, []);
 ```
+
+## useContext
+
+- `useContext` conecta todos los componentes permitiendo pasar la información que deseemos sin tener que enviarla a traves de los props.
+- Para usarlo debemos usar `React.createContext`
+  - `const ThemeContext = React.createContext({});`
+- Luego debemos usar el provider del respectivo contexto y asignarle los valores que deseamos encapsular para usarlo en toda la aplicación.
+  - `<ThemeContext.Provider value={{ isDarkModeTheme, setIsDarkModeTheme }}>`
+- Debemos "importar" el provider en index.js (el archivo superior de nuestra aplicación) y encapusar el componente principal (<App/>)
+
+```sh
+  ReactDOM.render(
+    <React.StrictMode>
+      <ThemeContextProvider>
+        <App />
+      </ThemeContextProvider>
+    </React.StrictMode>,
+    document.getElementById("root")
+  );
+```
+
+- En el componente donde deseemos usar o modificar alguno de estos valores, debemos usar importar nuestro contexto y usar `useContext` de react para obtener los valores.
+
+### Ejemplo
+
+```
+import { useContext } from "react";
+import ThemeContext from "../context/ThemeContext";
+
+const Header = () => {
+  const { isDarkModeTheme, setIsDarkModeTheme } = useContext(ThemeContext);
+.
+.
+.
+}
+```

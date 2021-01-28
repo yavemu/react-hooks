@@ -1,11 +1,10 @@
-import "./App.css";
 import Characters from "./components/Characters";
 import Header from "./components/Header";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hola Mundo desde React</h1>
       <Header />
       <Characters />
     </div>
