@@ -72,3 +72,22 @@ const Header = () => {
 - Cumple funciones similares a `useState` pero es mas escalable.
 - Te permite tener un valor inicial, un reducer y un dispatch para enviar la información.
 - `useReducer` esta basada en la filosofia de Redux.
+
+## useMemo
+
+- Nos ayuda a evitar calculos inecesarios guardando en memoria los resultados de funciones repetitivas.
+- `useMemo` nos permitirá usar la memoización (Memoization)
+- Un ejemplo donde podemos usar useMemo es para filtrar datos fijos.
+- Para usarlo se importa `useMemo` de react.
+- `useMemo` requiere dos parametros en una función anonima , el primero la logica que queremos memoizar y el segundo parametro el conjunto de valores que debe escuchar para posteriormente ejecutar la funcionalidad.
+- ```
+  const filteredCharacters = useMemo(
+      () =>
+        charactersData.filter((characterFiltered) => {
+          return characterFiltered.name
+            .toLowerCase()
+            .includes(searchCharacter.toLowerCase());
+        }),
+      [charactersData, searchCharacter]
+    );
+  ```

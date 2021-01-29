@@ -13,7 +13,7 @@ const CharacterCard = ({
         className={isCharacterInFavorites ? "red-color" : "green-color"}
         onClick={() => handleFavorite(character)}
       >
-        {isCharacterInFavorites ? "Eliminar de favorito" : "Agregar a favorito"}
+        {isCharacterInFavorites ? "Remove from favorite" : "Add to favorite"}
       </button>
     </div>
   );

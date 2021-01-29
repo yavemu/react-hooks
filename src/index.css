@@ -12,7 +12,8 @@ code {
     monospace;
 }
 
-button {
+button,
+input {
   padding: 6px 12px;
   border-radius: 15px;
   cursor: pointer;
@@ -28,12 +29,14 @@ button.green-color,
   border-color: #00ff00;
 }
 
-button:active {
+button:active,
+input:active {
   outline: none;
   border: none;
 }
 
-button:focus {
+button:focus,
+input:focus {
   outline: 0;
 }
 
@@ -45,6 +48,7 @@ li {
 
 .App {
   padding: 0 30px;
+  height: 100vh;
 }
 
 .Header {
@@ -96,8 +100,13 @@ li {
   color: #fefefe;
 }
 
-.App.darkMode button {
+.App.darkMode button,
+.App.darkMode input {
   background-color: #1ca1ef;
+  color: #fefefe;
+}
+
+.App.darkMode input::placeholder {
   color: #fefefe;
 }
 
