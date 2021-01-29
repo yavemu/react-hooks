@@ -5,8 +5,10 @@ import {
   useMemo,
   useRef,
   Fragment,
+  useCallback,
 } from "react";
 import CharacterCard from "./CharacterCard";
+import SearchCharacter from "./SearchCharacter";
 
 const initialState = {
   favorites: [],
@@ -60,9 +62,13 @@ const Characters = () => {
     [charactersData, searchCharacter]
   );
 
-  const handleSearchCharacter = () => {
+  // const handleSearchCharacter = () => {
+  //   setSearchCharacter(searchCharacterInput.current.value);
+  // };
+
+  const handleSearchCharacter = useCallback(() => {
     setSearchCharacter(searchCharacterInput.current.value);
-  };
+  }, []);
 
   const handleFavorite = (character) => {
     dispatchCharactersReducer({
@@ -86,16 +92,11 @@ const Characters = () => {
 
   return (
     <Fragment>
-      <div className="SearchCharacter">
-        <input
-          type="text"
-          value={searchCharacter}
-          id="searchCharacter"
-          placeholder="Search character"
-          onChange={handleSearchCharacter}
-          ref={searchCharacterInput}
-        />
-      </div>
+      <SearchCharacter
+        searchCharacter={searchCharacter}
+        searchCharacterInput={searchCharacterInput}
+        handleSearchCharacter={handleSearchCharacter}
+      />
       <div className="characters-container">
         <div className="characters">
           {!filteredCharacters.length && <p>Characters not found</p>}

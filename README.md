@@ -115,3 +115,9 @@ const handleSearchCharacter = () => {
     setSearchCharacter(searchCharacterInput.current.value);
   };
 ```
+
+## useCallback
+
+- `useCallback` ayuda a evitar cálculos innecesarios en funciones.
+- useCallback(fn, deps) es igual a useMemo(() => fn, deps).
+- `useCallback` requiere dos parametros, el primero es la función que deseamos implementar y el segundo parametro el conjunto de valores que debe escuchar para posteriormente ejecutar la funcionalidad.
