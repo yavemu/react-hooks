@@ -126,3 +126,7 @@ const handleSearchCharacter = () => {
 
 - `custom Hooks` hace referencia a la flexibilidad que tenemos para crear nuestros propios Hooks en React.
 - Los "hooks" son pequeñas funcionalidades logicas reutilizables dentro de nuestra aplicación.
+
+## React Hooks project
+
+- En el siguinte repositorio se realizara el proyecto correspondiente a este curso https://github.com/yavemu/react-hooks-project
