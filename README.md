@@ -91,3 +91,27 @@ const Header = () => {
       [charactersData, searchCharacter]
     );
   ```
+
+## useRef
+
+- Nos sirve para hacer referencias hacia los inputs y formularios de una manera mas profesional
+- Al usar `useRef` tenemos completo control sobre la información de un input y para acceder a ella debemos usar la propiedad '.current'.
+
+### Ejemplo
+
+```
+const searchCharacterInput = useRef(null);
+
+<input
+  type="text"
+  value={searchCharacter}
+  id="searchCharacter"
+  placeholder="Search character"
+  onChange={handleSearchCharacter}
+  ref={searchCharacterInput}
+/>
+
+const handleSearchCharacter = () => {
+    setSearchCharacter(searchCharacterInput.current.value);
+  };
+```

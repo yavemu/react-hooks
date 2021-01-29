@@ -1,4 +1,11 @@
-import { useState, useEffect, useReducer, useMemo, Fragment } from "react";
+import {
+  useState,
+  useEffect,
+  useReducer,
+  useMemo,
+  useRef,
+  Fragment,
+} from "react";
 import CharacterCard from "./CharacterCard";
 
 const initialState = {
@@ -31,6 +38,7 @@ const Characters = () => {
     initialState
   );
   const [searchCharacter, setSearchCharacter] = useState("");
+  const searchCharacterInput = useRef(null);
 
   /**** filteredCharacters without useMemo ****/
   // const filteredCharacters = charactersData.filter(
@@ -52,8 +60,8 @@ const Characters = () => {
     [charactersData, searchCharacter]
   );
 
-  const handleSearchCharacter = (event) => {
-    setSearchCharacter(event.target.value);
+  const handleSearchCharacter = () => {
+    setSearchCharacter(searchCharacterInput.current.value);
   };
 
   const handleFavorite = (character) => {
@@ -85,6 +93,7 @@ const Characters = () => {
           id="searchCharacter"
           placeholder="Search character"
           onChange={handleSearchCharacter}
+          ref={searchCharacterInput}
         />
       </div>
       <div className="characters-container">
