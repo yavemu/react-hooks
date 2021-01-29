@@ -18,6 +18,16 @@ button {
   cursor: pointer;
 }
 
+button.red-color,
+.App.darkMode button.red-color {
+  border-color: #ff0000;
+}
+
+button.green-color,
+.App.darkMode button.green-color {
+  border-color: #00ff00;
+}
+
 button:active {
   outline: none;
   border: none;
@@ -27,6 +37,16 @@ button:focus {
   outline: 0;
 }
 
+ul,
+li {
+  list-style-type: decimal;
+  text-align: left;
+}
+
+.App {
+  padding: 0 30px;
+}
+
 .Header {
   display: flex;
   flex-direction: row;
@@ -34,11 +54,25 @@ button:focus {
   align-items: center;
 }
 
+.characters-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 .characters {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.characters-favorites {
+  padding-right: 20px;
+}
+
+.favorite-character {
+  width: 230px;
 }
 
 .character {

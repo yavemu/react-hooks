@@ -66,3 +66,9 @@ const Header = () => {
 .
 }
 ```
+
+## useReducer
+
+- Cumple funciones similares a `useState` pero es mas escalable.
+- Te permite tener un valor inicial, un reducer y un dispatch para enviar la información.
+- `useReducer` esta basada en la filosofia de Redux.
