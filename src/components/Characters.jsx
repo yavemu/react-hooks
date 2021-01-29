@@ -1,6 +1,5 @@
 import {
   useState,
-  useEffect,
   useReducer,
   useMemo,
   useRef,
@@ -9,7 +8,9 @@ import {
 } from "react";
 import CharacterCard from "./CharacterCard";
 import SearchCharacter from "./SearchCharacter";
+import useCharacters from "../hooks/useCharacters";
 
+const API = "https://rickandmortyapi.com/api/character";
 const initialState = {
   favorites: [],
 };
@@ -34,13 +35,13 @@ const favoriteReducer = (state, action) => {
 };
 
 const Characters = () => {
-  const [charactersData, setCharactersData] = useState([]);
   const [charactersReducer, dispatchCharactersReducer] = useReducer(
     favoriteReducer,
     initialState
   );
   const [searchCharacter, setSearchCharacter] = useState("");
   const searchCharacterInput = useRef(null);
+  const charactersData = useCharacters(API);
 
   /**** filteredCharacters without useMemo ****/
   // const filteredCharacters = charactersData.filter(
@@ -83,12 +84,6 @@ const Characters = () => {
     charactersReducer.favorites.find(
       (favoriteCharacter) => favoriteCharacter.id === character.id
     );
-
-  useEffect(() => {
-    fetch("https://rickandmortyapi.com/api/character")
-      .then((response) => response.json())
-      .then((data) => setCharactersData(data.results));
-  }, []);
 
   return (
     <Fragment>

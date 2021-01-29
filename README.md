@@ -121,3 +121,8 @@ const handleSearchCharacter = () => {
 - `useCallback` ayuda a evitar cálculos innecesarios en funciones.
 - useCallback(fn, deps) es igual a useMemo(() => fn, deps).
 - `useCallback` requiere dos parametros, el primero es la función que deseamos implementar y el segundo parametro el conjunto de valores que debe escuchar para posteriormente ejecutar la funcionalidad.
+
+## custom Hooks
+
+- `custom Hooks` hace referencia a la flexibilidad que tenemos para crear nuestros propios Hooks en React.
+- Los "hooks" son pequeñas funcionalidades logicas reutilizables dentro de nuestra aplicación.
